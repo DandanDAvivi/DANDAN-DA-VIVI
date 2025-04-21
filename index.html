@@ -1,17 +1,51 @@
-<!-- index.html -->
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
   <meta charset="UTF-8">
-  <title>Meu Site</title>
-  <link rel="stylesheet" href="style.css">
+  <title>Coração 2D</title>
+  <style>
+    body {
+      background: #fff0f5;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+    }
+
+    .coracao {
+      position: relative;
+      width: 100px;
+      height: 90px;
+      background: red;
+      transform: rotate(-45deg);
+      box-shadow: 0 0 10px rgba(0,0,0,0.2);
+    }
+
+    .coracao::before,
+    .coracao::after {
+      content: "";
+      position: absolute;
+      width: 100px;
+      height: 90px;
+      background: red;
+      border-radius: 50%;
+    }
+
+    .coracao::before {
+      top: -50px;
+      left: 0;
+    }
+
+    .coracao::after {
+      left: 50px;
+      top: 0;
+    }
+  </style>
 </head>
 <body>
-  <h1>Bem-vindo ao meu site!</h1>
-  <p>Esse é um site simples criado do zero.</p>
-
-  <button onclick="mostrarAlerta()">Clique aqui</button>
-
-  <script src="script.js"></script>
+  <div class="coracao"></div>
 </body>
 </html>
+
+
